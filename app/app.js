@@ -1,12 +1,18 @@
 
 (function() {
-  var app = angular.module('teaStore', [
+  angular.module('teaStore', [
       'store-directives',
-  ]);
+      'ngRoute'
+  ]).
+  config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
+      $locationProvider.hashPrefix('!');
+
+      $routeProvider.when('/', {templateUrl: 'products.html'}).when('/products', {templateUrl: 'products.html'}).otherwise({redirectTo: '/'});
+  }]);
 
 
 
-  app.controller('StoreController', function() {
+    angular.module('teaStore').controller('StoreController', function() {
     this.products = teas;
   });
 

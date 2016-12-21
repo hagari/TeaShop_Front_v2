@@ -1,8 +1,8 @@
-var app = angular.module('store-directives', []);
+angular.module('store-directives', []);
 
-app.directive("products", function(){
+angular.module('teaStore').directive("product", function(){
     return {
         restrict: 'E',
-        templateUrl: 'products.html'
+        templateUrl: 'product.html'
     };
 });
