@@ -6,10 +6,10 @@
         <h3>{{product.name | uppercase}}<em class="pull-right">{{product.price | currency}}</em>
         </h3>
         <blockquote>{{product.details}}</blockquote>
-        <div class="img-wrap">
+        <div>
             <img ng-src="img/{{product.image}}.jpg" class="img-thumbnail center-block" alt="{{product.name}}"/>
         </div>
-        <button ng-show="product.canPurchase" ng-click="cartCtrl.addItem(prodcut)">Add to Cart</button>
+        <button class="button" ng-show="product.canPurchase" ng-click="cartCtrl.addItem(prodcut)">Add to Cart</button>
         <p ng-show="product.soldOut">Sold Out</p>
     </div>
 </div>

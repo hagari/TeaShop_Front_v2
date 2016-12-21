@@ -1,22 +1,39 @@
 body{
-  max-width: 500px;
+  max-width: 650px;
   margin: 0 auto;
 }
 
 a {
-  color: #ac005f;
+  color: #fcf9ff;
 }
 a:hover,
 a:focus {
   text-decoration: underline;
 }
 
-ul{
+ul {
+  list-style-type: none;
+  margin: 0;
   padding: 0;
+  overflow: hidden;
+  background-color: #333;
 }
 
-li{
-  list-style: none;
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: #111;
 }
 
 li.small-image{
@@ -63,23 +80,13 @@ img{
   margin-right: 0;
 }
 
-.nav-pills {
-  margin-bottom: 30px;
-}
-
-.nav-pills > li > a:hover,
-.nav-pills > li > a:focus{
-  color: #ac005f;
-}
-
-.nav-pills > li.active > a,
-.btn-primary,
-.btn-primary:focus {
-  background: #ac005f;
-  border: 0;
-}
-
-.nav-pills > li.active > a:hover,
-.btn-primary:hover {
-  background: #ac005f;
+.button {
+  background-color: #383838;
+  border: none;
+  color: white;
+  padding: 8px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
 }

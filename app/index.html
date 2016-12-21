@@ -11,7 +11,6 @@
     <script data-require="semantic-ui@*" data-semver="0.9.6" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.9.6/javascript/semantic.min.js"></script>
     <link rel="stylesheet" href="style.css" />
     <script src="bower_components/angular-route/angular-route.js"></script>
-
     <script src="app.js"></script>
     <script src="products.js"></script>
   </head>
@@ -19,8 +18,15 @@
   <body ng-controller="StoreController as store">
     <!--  Store Header  -->
     <header>
-      <h1 class="text-center">Tea Shop</h1>
-      <h2 class="text-center">– Buy Delicious Tea Online! –</h2>
+      <div class="text-center">
+          <h1><b>Tea Shop</b></h1>
+      <h4>discover richer tastes online</h4>
+      <ul>
+        <li><a href="#!/">Home</a></li>
+        <li><a href="#!/products">All Teas</a></li>
+        <li><a href="#!/cart">Cart {{cartCtrl.total() | currency}}</a></li>
+      </ul>
+      </div>
     </header>
     <div ng-view></div>
   </body>
