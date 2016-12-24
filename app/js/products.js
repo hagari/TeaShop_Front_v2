@@ -6,3 +6,11 @@ angular.module('teaStore').directive("product", function(){
         templateUrl: 'product.html'
     };
 });
+
+angular.module('teaStore').directive("filters", function(){
+    return {
+        restrict: 'E',
+        templateUrl: 'productsFilters.html'
+    };
+});
+

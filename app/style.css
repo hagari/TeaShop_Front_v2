@@ -1,6 +1,7 @@
 body{
   max-width: 650px;
   margin: 0 auto;
+  font-family: Verdana;
 }
 
 a {
@@ -57,29 +58,6 @@ img{
   width: 200px;
 }
 
-.img-thumbnail {
-  background: none;
-  border: 0;
-  height: auto;
-  max-width: 100%;
-}
-
-.img-thumbnails {
-  margin: 0 auto 10px;
-  width: 200px;
-}
-
-.img-thumbnails .thumbnail {
-  background: #f8f8f8;
-  border: 0;
-  margin-right: 25px;
-  min-height: 50px;
-}
-
-.img-thumbnails .thumbnail:last-child {
-  margin-right: 0;
-}
-
 .button {
   background-color: #383838;
   border: none;
@@ -89,4 +67,8 @@ img{
   text-decoration: none;
   display: inline-block;
   font-size: 14px;
+}
+
+input {
+  width: 15%;
 }
