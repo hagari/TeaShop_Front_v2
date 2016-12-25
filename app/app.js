@@ -1,18 +1,28 @@
 (function() {
   angular.module('teaStore', [
       'store-directives',
-      'ngRoute'
+      'ngRoute',
+      'cart'
   ]).
   config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
-      $locationProvider.hashPrefix('!');
+    //  $locationProvider.hashPrefix('!');
 
       $routeProvider
-            .when('/', {
-                  templateUrl: 'products.html',
-
-            })
-            .when('/products', {
-                  templateUrl: 'products.html',
+          .when('/', {
+              templateUrl: 'templates/home.html',
+              controller: function($http){
+                  var ctrl = this;
+                  ctrl.getHomePage  = function(){
+                      $http.get('/')
+                          .then(function(response) {
+                              ctrl.products = response.data;
+                          });
+                  }
+              },
+              controllerAs: 'homeCtrl'
+          })
+          .when('/products', {
+                  templateUrl: 'templates/products.html',
                   controller: function($http){
                       var ctrl = this;
 
@@ -43,11 +53,16 @@
                   ctrl.getProductById();
               },
               controllerAs: 'showCtrl'})
+          .when('/cart', {
+              templateUrl: 'templates/cart.html',
+              controller: 'CartController',
+              controllerAs: 'cartCtrl'
+              })
           .otherwise({redirectTo: '/'});
   }]);
 
     angular.module('teaStore').controller('StoreController', function() {
-    this.products = teas;
+        this.products = teas;
   });
 
   var teas = [
@@ -70,4 +85,6 @@
           canPurchase:true,
           image:"03_green-tea"},
 ]
+
+  var cart = [];
 })();

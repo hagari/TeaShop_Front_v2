@@ -23,7 +23,6 @@
         ]
 
         console.log("inside $httpBackend");
-        $httpBackend.whenRoute('GET', '/products').respond(teas);
         $httpBackend.whenGET('/products').respond(teas);
 
     });
