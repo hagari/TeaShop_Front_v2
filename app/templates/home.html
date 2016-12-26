@@ -3,7 +3,7 @@
     <!--  Product Container  -->
     <!--    <div class="list-group-item" ng-repeat="product in homeCtrl.products | orderBy:'-price'" ng-href="/products/{{product.id}}"> -->
     <div class="list-group-item"
-         ng-repeat="product in store.products |
+         ng-repeat="product in homeCtrl.products |
          orderBy:'-price'"
          ng-href="#/products/{{product.id}}">
         <product></product>
