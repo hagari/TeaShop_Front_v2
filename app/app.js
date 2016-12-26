@@ -67,7 +67,7 @@
         this.products = teas;
   });
 
-    angular.module('teaStore').controller('HomeController', ['teasService', '$http', function (teasService,$http) {
+    angular.module('teaStore').controller('HomeController', ['teasService','$http', function (teasService,$http) {
         var ctrl = this;
 
         ctrl.products = teasService.getTeas();
@@ -81,7 +81,7 @@
         ctrl.getHomeProducts();
     }]);
 
-    angular.module('teaStore').controller('ProductsController', ['teasService', '$http', function (teasService,$http) {
+    angular.module('teaStore').controller('ProductsController', ['teasService','$http', function (teasService,$http) {
         var ctrl = this;
 
         ctrl.products = teasService.getTeas();
@@ -95,7 +95,7 @@
         ctrl.getProducts();
     }]);
 
-    angular.module('teaStore').controller('ProductShowController', ['teasService', '$http', function (teasService,$http) {
+    angular.module('teaStore').controller('ProductShowController', ['teasService','$http','$routeParams', function (teasService,$http,$routeParams) {
         var ctrl = this;
 
         ctrl.products = teasService.getTeas();
