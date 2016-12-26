@@ -1,6 +1,8 @@
 angular.module('cart', []);
 
-angular.module('teaStore').controller('CartController',
+angular.module('teaStore').service('cartService', function () {
+    
+}).controller('CartController',
     function(){
     this.addItem = function(){
         //service.add
