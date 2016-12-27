@@ -46,7 +46,7 @@ angular.module('teaStore').controller('AllProductsController', ['teasService','$
         }
     }
     ctrl.saveCart = function () {
-        cartService.save();
+        cartService.saveToLocalStorage();
     }
 
     ctrl.getProducts();

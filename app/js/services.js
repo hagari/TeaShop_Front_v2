@@ -89,7 +89,7 @@ angular.module('teaStore').service('cartService', function () {
         return cart;
     }
 
-    this.save = function(){
+    this.saveToLocalStorage = function(){
         var cartToSave = angular.toJson(cart);
         localStorage.setItem("cart", cartToSave);
     }
