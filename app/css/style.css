@@ -8,7 +8,7 @@ a {
   color: #fcf9ff;
 }
 
-a.prod {
+a.productLink {
   color: #383838;
 }
 
@@ -86,11 +86,14 @@ input {
 .card {
   padding: 16px 0px;
 }
-.card2 {
+.filtersPadding {
   padding: 8px 0px;
 }
 
-.sep {
+.topSeparator {
   border-top: 1px solid #d0d0d0;
+}
 
+.bottomSeparator {
+  border-bottom: 1px solid #d0d0d0;
 }

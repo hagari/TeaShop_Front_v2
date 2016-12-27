@@ -3,8 +3,8 @@
      ng-repeat="product in homeCtrl.products | orderBy:'-price'">
     <!--  Product Container  -->
     <div class="card">
-        <div class="sep">
-            <a class= "prod" ng-href="#!/products/{{product.id}}">
+        <div class="topSeparator">
+            <a class= "productLink" ng-href="#!/products/{{product.id}}">
                 <product></product>
             </a>
             <div class="pull-right">

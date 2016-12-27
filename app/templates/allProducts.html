@@ -1,4 +1,4 @@
-<div class="card2">
+<div class="filtersPadding">
 <filters from="productsCtrl.from" to="productsCtrl.to" type="productsCtrl.type"></filters>
 <div class="pull-right">
 <button class="button saveButton" ng-click="productsCtrl.saveCart()">Save Cart</button>
@@ -9,9 +9,8 @@
      ng-repeat="product in productsCtrl.products | orderBy:'-price' | filter: productsCtrl.priceGreaterThan() | filter: productsCtrl.priceSmallerThan() | filter: productsCtrl.teaType()">
     <!--  Product Container  -->
     <div class="card">
-        <div class="sep">
-
-        <a class="prod" ng-href="#!/products/{{product.id}}">
+        <div class="topSeparator">
+        <a class="productLink" ng-href="#!/products/{{product.id}}">
             <product></product>
         </a>
         <div class="pull-right">
