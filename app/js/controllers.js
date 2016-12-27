@@ -34,14 +34,17 @@ angular.module('teaStore').controller('AllProductsController', ['teasService','$
         }
     }
 
-    ctrl.teaType = function (item) {
-        if (!ctrl.type){
-            return true;
+    ctrl.teaType = function () {
+        return function (item) {
+            if (!ctrl.type) {
+                return true;
+            }
+            if ((ctrl.type == 'All')) {
+                return true;
+            }
+            return (item.name.indexOf(ctrl.type) > -1);
         }
-        if ((ctrl.type == 'All')){ return true;}
-        return (item.name.indexOf(ctrl.type) > -1);
     }
-
     ctrl.saveCart = function () {
         cartService.save();
     }
@@ -49,7 +52,7 @@ angular.module('teaStore').controller('AllProductsController', ['teasService','$
     ctrl.getProducts();
 }]);
 
-angular.module('teaStore').controller('ProductShowController', ['teasService','$http','$routeParams', function (teasService,$http,$routeParams) {
+angular.module('teaStore').controller('ProductShowController', ['teasService','$http','$routeParams','cartService', function (teasService,$http,$routeParams,cartService) {
     var ctrl = this;
 //TODO: next section needs to be removed once GET calls are successful
     ctrl.products = {
@@ -68,9 +71,13 @@ angular.module('teaStore').controller('ProductShowController', ['teasService','$
                 ctrl.products = response.data;
             });
     }
+
+    ctrl.addItem = function (item) {
+        cartService.addItem(item);
+    }
+
     ctrl.getProductById();
 }]);
-
 
 angular.module('teaStore').controller('HomeController', ['teasService','$http','cartService', function (teasService,$http, cartService) {
     var ctrl = this;
