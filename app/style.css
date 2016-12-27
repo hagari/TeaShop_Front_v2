@@ -7,9 +7,15 @@ body{
 a {
   color: #fcf9ff;
 }
+
+a.prod {
+  color: #383838;
+}
+
 a:hover,
-a:focus {
-  text-decoration: underline;
+a:focus,
+a.prod:hover{
+  text-decoration: none;
 }
 
 ul {
@@ -32,17 +38,8 @@ li a {
   text-decoration: none;
 }
 
-/* Change the link color to #111 (black) on hover */
 li a:hover {
   background-color: #111;
-}
-
-li.small-image{
-  width: 50px;
-}
-
-li.small-image img{
-  width: 100%;
 }
 
 img{
@@ -67,6 +64,7 @@ img{
   text-decoration: none;
   display: inline-block;
   font-size: 14px;
+  border-radius: 4px
 }
 
 .saveButton {
@@ -78,8 +76,21 @@ img{
   text-decoration: none;
   display: inline-block;
   font-size: 14px;
+  border-radius: 4px
 }
 
 input {
   width: 15%;
+}
+
+.card {
+  padding: 16px 0px;
+}
+.card2 {
+  padding: 8px 0px;
+}
+
+.sep {
+  border-top: 1px solid #d0d0d0;
+
 }

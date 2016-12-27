@@ -1,5 +1,6 @@
-<div class="list-group-item">
-    <!-- Product view  -->
+<!-- Product view  -->
+<div class="card">
+    <div class="sep">
         <h3><b>{{showCtrl.products.name}}</b><em class="pull-right">{{showCtrl.products.price | currency}}</em>
         </h3>
         <blockquote>{{showCtrl.products.details}}</blockquote>
@@ -7,5 +8,8 @@
             <img ng-src="img/{{showCtrl.products.image}}.jpg" class="img-thumbnail center-block" alt="{{showCtrl.products.name}}"/>
         </div>
         <p ng-show="showCtrl.products.soldOut">Sold Out</p>
+    </div>
 </div>
-<button class="button" ng-show="showCtrl.products.canPurchase" ng-click="showCtrl.addItem(showCtrl.products)">Add to Cart</button>
+<div class="pull-right">
+    <button class="button" ng-show="showCtrl.products.canPurchase" ng-click="showCtrl.addItem(showCtrl.products)">Add to Cart</button>
+</div>

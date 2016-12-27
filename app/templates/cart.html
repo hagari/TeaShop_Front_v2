@@ -1,0 +1,34 @@
+<div class="alert alert-warning" role="alert" ng-show="cartCtrl.total() == 0">
+    Your cart is empty
+</div>
+<!--  Items Container  -->
+    <div ng-show="cartCtrl.total() > 0">
+        <h3>Cart Summary</h3>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                <th>Total:</th>
+                <th>{{cartCtrl.total() | currency}}</th>
+                <th></th>
+                </tr>
+            </tfoot>
+            <tbody>
+                <tr class="table" ng-repeat="item in cartCtrl.getCart()">
+                    <td>{{item.name}}</td>
+                    <td>{{item.price | currency}}</td>
+                    <td>{{item.quantity}}</td>
+                </tr>
+            </tbody>
+        </table>
+</div>
+    <div class="pull-right">
+        <a class="button" ng-show="cartCtrl.total() > 0">Checkout <span class="glyphicon glyphicon-shopping-cart"></span>
+    </a>
+</div>

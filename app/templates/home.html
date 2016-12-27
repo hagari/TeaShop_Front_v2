@@ -1,12 +1,15 @@
 <!--  Products Container  -->
-<button class="button saveButton" ng-click="productsCtrl.saveCart()">Save Cart</button>
 <div class="list-group"
      ng-repeat="product in homeCtrl.products | orderBy:'-price'">
     <!--  Product Container  -->
-    <a class="list-group-item"
-
-       ng-href="#!/products/{{product.id}}">
-        <product></product>
-    </a>
-    <button class="button" ng-show="product.canPurchase" ng-click="homeCtrl.addItem(product)">Add to Cart</button>
+    <div class="card">
+        <div class="sep">
+            <a class= "prod" ng-href="#!/products/{{product.id}}">
+                <product></product>
+            </a>
+            <div class="pull-right">
+                <button class="button" ng-show="product.canPurchase" ng-click="homeCtrl.addItem(product)">Add to Cart</button>
+            </div>
+        </div>
+    </div>
 </div>
