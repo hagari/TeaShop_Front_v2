@@ -1,21 +1,7 @@
-angular.module('cart', []);
+angular.module('teaStore').controller('CartController', ['cartService', function(cartService) {
 
-angular.module('teaStore').service('cartService', function () {
-    
-}).controller('CartController',
-    function(){
-    this.addItem = function(){
-        //service.add
+    this.total = function () {
+        return cartService.total();
     }
-    this.item = {};
-        this.addItem = function (product) {
-            this.item.name = product.name;
-            this.item.price = product.price;
-        }
-
-        this.total = function(){
-            return 0;
-        }
-    }
-);
+}]);
 

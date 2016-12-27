@@ -13,23 +13,27 @@
     <script src="//code.angularjs.org/snapshot/angular-mocks.js"></script>
     <script src="app.js"></script>
     <script src="js/products.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/controllers.js"></script>
     <script src="test/appTest.js"></script>
     <script src="js/cart.js"></script>
   </head>
   <body>
-    <!--  Store Header  -->
+  <div ng-controller="CartController as cartCtrl">
+  <!--  Store Header  -->
     <header>
-      <div class="text-center">
-          <h1><b>Tea Shop</b></h1>
-          <h4>discover richer tastes online</h4>
-      <ul>
-        <li><a href="#!/">Home</a></li>
-        <li><a href="#!/products">All Teas</a></li>
-        <li><a href="#!/cart" ng-controller="CartController as cartCtrl">Cart {{cartCtrl.total() | currency}}</a></li>
-      </ul>
-      </div>
-    </header>
-    <div ng-view></div>
+        <div class="text-center">
+            <h1><b>Tea Shop</b></h1>
+            <h4>discover richer tastes online</h4>
+        <ul>
+          <li><a href="#!/">Home</a></li>
+          <li><a href="#!/products">All Teas</a></li>
+          <li><a href="#!/cart">Cart {{cartCtrl.total() | currency}}</a></li>
+        </ul>
+        </div>
+      </header>
+      <div ng-view></div>
+    </div>
   </body>
 
 </html>

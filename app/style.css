@@ -69,6 +69,17 @@ img{
   font-size: 14px;
 }
 
+.saveButton {
+  background-color: #383838;
+  border: none;
+  color: white;
+  padding: 1px 4px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+}
+
 input {
   width: 15%;
 }

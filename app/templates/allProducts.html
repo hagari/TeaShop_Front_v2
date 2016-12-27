@@ -1,0 +1,12 @@
+<filters from="productsCtrl.from" to="productsCtrl.to" type="productsCtrl.type"></filters>
+<!--  Products Container  -->
+<button class="button saveButton" ng-click="productsCtrl.saveCart()">Save Cart</button>
+<div class="list-group">
+    <!--  Product Container  -->
+    <a class="list-group-item"
+         ng-repeat="product in productsCtrl.products | orderBy:'-price' | filter: productsCtrl.priceGreaterThan() | filter: productsCtrl.priceSmallerThan() | filter: productsCtrl.teaType()"
+         href="#!/products/{{product.id}}">
+        <product></product>
+        <button class="button" ng-show="product.canPurchase" ng-click="productsCtrl.addItem(product)">Add to Cart</button>
+    </a>
+</div>

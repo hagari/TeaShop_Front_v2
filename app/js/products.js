@@ -3,14 +3,19 @@ angular.module('store-directives', []);
 angular.module('teaStore').directive("product", function(){
     return {
         restrict: 'E',
-        templateUrl: 'product.html'
+        templateUrl: 'templates/product.html'
     };
 });
 
 angular.module('teaStore').directive("filters", function(){
     return {
         restrict: 'E',
-        templateUrl: 'productsFilters.html'
+        templateUrl: 'templates/productsFilters.html',
+        scope:{
+            from:'=',
+            to:'=',
+            type:'=',
+        }
     };
 });
 
