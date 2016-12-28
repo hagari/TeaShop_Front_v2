@@ -4,7 +4,7 @@ angular.module('teaStore').controller('AllProductsController', ['teasService','$
     ctrl.products = teasService.getTeas();
 
     ctrl.getProducts = function() {
-        $http.get('/products')
+        $http.get('http://localhost:3000/products')
             .then(function(response) {
                 ctrl.products = response.data;
             });
@@ -57,7 +57,7 @@ angular.module('teaStore').controller('ProductShowController', ['teasService','$
 //TODO: next section needs to be removed once GET calls are successful
     ctrl.products = {
         id:2,
-        name:'Green Tea',
+        name:'Green Tea with Ginger and Lemon',
         price:19.5,
         type:'Green',
         details:'Delicate, premium white tea subtly flavored with natural, sweet Arabian jasmin flowers.',
@@ -66,7 +66,7 @@ angular.module('teaStore').controller('ProductShowController', ['teasService','$
         image:"03_green-tea"};
 
     ctrl.getProductById = function () {
-        $http.get('/products/' + $routeParams.id)
+        $http.get('http://localhost:3000/products/' + $routeParams.id)
             .then(function(response){
                 ctrl.products = response.data;
             });
@@ -85,7 +85,7 @@ angular.module('teaStore').controller('HomeController', ['teasService','$http','
     ctrl.products = teasService.getTeas();
 
     ctrl.getHomeProducts = function() {
-        $http.get('/')
+        $http.get('http://localhost:3000/')
             .then(function(response) {
                 ctrl.products = response.data;
             });

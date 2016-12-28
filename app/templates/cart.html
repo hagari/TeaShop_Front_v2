@@ -20,7 +20,7 @@
                 </tr>
             </tfoot>
             <tbody>
-                <tr class="table" ng-repeat="item in cartCtrl.getCart()">
+                <tr ng-repeat="item in cartCtrl.getCart()">
                     <td>{{item.name}}</td>
                     <td>{{item.price | currency}}</td>
                     <td>{{item.quantity}}</td>
