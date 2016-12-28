@@ -6,7 +6,7 @@
 </div>
 <!--  Products Container  -->
 <div class="list-group"
-     ng-repeat="product in productsCtrl.products | orderBy:'-price' | filter: productsCtrl.priceGreaterThan() | filter: productsCtrl.priceSmallerThan() | filter: productsCtrl.teaType()">
+     ng-repeat="product in productsCtrl.products | filter: productsCtrl.priceGreaterThan() | filter: productsCtrl.priceSmallerThan() | filter: productsCtrl.teaType()">
     <!--  Product Container  -->
     <div class="card">
         <div class="topSeparator">

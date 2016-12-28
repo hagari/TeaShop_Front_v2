@@ -3,9 +3,8 @@ angular.module('teaStore').service('teasService', function() {
     var teas = [
         {
             id:1,
-            name:'White Tea',
+            name:'Pure White Tea with Jasmine',
             price:17.5,
-            type:'White',
             details:'Delicate, premium white tea subtly flavored with natural, sweet Arabian jasmin flowers.',
             soldOut:false,
             canPurchase:true,
@@ -14,11 +13,19 @@ angular.module('teaStore').service('teasService', function() {
             id:2,
             name:'Green Tea',
             price:19.5,
-            type:'Green',
-            details:'Delicate, premium white tea subtly flavored with natural, sweet Arabian jasmin flowers.',
+            details:'100% pure Green tea carefully chosen from the best highland plantations.',
             soldOut:false,
             canPurchase:true,
             image:"03_green-tea"},
+        {
+            id:3,
+            name:'English Black Tea',
+            price:16.5,
+            details:'An uplifting blend of zesty Ceylon teas expertly combined with rich, robust Indian teas.',
+            soldOut:false,
+            canPurchase:true,
+            image:"04_earl-grey-tea"
+        }
     ]
 
     this.getTeas = function(){
